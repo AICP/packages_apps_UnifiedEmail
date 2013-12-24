@@ -23,7 +23,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dip"
-        android:background="#babebe"
+        android:background="@color/quoted_text_bg"
         android:id="@+id/upper_quotedtext_divider_bar"
         android:visibility="gone" />
 
@@ -63,7 +63,7 @@
         <View android:layout_height="match_parent"
             android:layout_width="2dip"
             android:layout_marginRight="16dip"
-            android:background="#babebe"
+            android:background="@color/quoted_text_bg"
             android:layout_marginTop="12dip"
             android:layout_marginBottom="12dip"
             android:layout_gravity="center_vertical"/>
@@ -82,7 +82,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dip"
-        android:background="#babebe"
+        android:background="@color/quoted_text_bg"
         android:layout_below="@id/quoted_text_button_bar"
         android:id="@+id/divider_bar" />
 

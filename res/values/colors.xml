@@ -117,4 +117,13 @@
     <color name="folder_teaser_senders_text">#58585b</color>
     <!-- The color of the count text in the teaser -->
     <color name="folder_teaser_count_text">@android:color/black</color>
+
+    <!-- colors from layouts -->
+    <color name="white_bg">#ffffff</color>
+    <color name="gray_bg">#aaaaaa</color>
+    <color name="gray_text">#555555</color>
+    <color name="black_text">#000000</color>
+    <color name="attachment_title">#333333</color>
+    <color name="attachment_subtitle">#aaaaaa</color>
+    <color name="quoted_text_bg">#babebe</color>
 </resources>
