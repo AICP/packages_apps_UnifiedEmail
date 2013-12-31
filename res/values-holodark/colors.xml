@@ -24,10 +24,10 @@
     <!-- Conversation List Item Colors -->
     <color name="subject_text_color_unread">@color/dark_gray_text_color</color>
     <color name="snippet_text_color_unread">#888888</color>
-    <color name="senders_text_color_unread">@color/dark_gray_text_color</color>
+    <color name="senders_text_color_unread">#FFFFFF</color>
     <color name="subject_text_color_read">@color/subject_text_color_unread</color>
     <color name="snippet_text_color_read">@color/snippet_text_color_unread</color>
-    <color name="senders_text_color_read">@color/senders_text_color_unread</color>
+    <color name="senders_text_color_read">#FFFFFF</color>
     <color name="date_text_color">@color/dark_gray_text_color</color>
     <color name="message_info_text_color">@color/gray_text_color</color>
     <color name="ap_background_color">#ff000000</color>
@@ -36,7 +36,7 @@
 
     <color name="drafts">#ff990000</color>
     <color name="attachment_bg_color">#ff222222</color>
-    <color name="swiped_bg_color">#ff444444</color>
+    <color name="swiped_bg_color">#ff333333</color>
     <color name="holo_light_background_color">#ff181818</color>
     <!-- Keep the following two colors in sync with LabelColorUtils.DEFAULT_COLORS (UnifiedGmail) -->
     <color name="default_folder_background_color">#222222</color>
@@ -48,7 +48,7 @@
     <color name="list_background_color">#111111</color>
 
     <!-- Compose colors -->
-    <color name="compose_label_text">#555555</color>
+    <color name="compose_label_text">#cccccc</color>
     <color name="quoted_text_color">@color/gray_text_color</color>
     <string name="quoted_text_background_color_string" translatable="false">@android:color/black</string>
     <!-- Must match the quoted_text_background_color_string -->
