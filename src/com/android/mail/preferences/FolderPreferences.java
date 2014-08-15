@@ -49,6 +49,8 @@ public class FolderPreferences extends VersionedPrefs {
         public static final String NOTIFICATION_RINGTONE = "notification-ringtone";
         /** Boolean value indicating whether we should explicitly vibrate */
         public static final String NOTIFICATION_VIBRATE = "notification-vibrate";
+        /** Boolean value indicating whether we should show as heads up notification */
+        public static final String NOTIFICATION_HEADS_UP = "notification-heads-up";
         /**
          * Boolean value indicating whether we notify for every message (<code>true</code>), or just
          * once for the folder (<code>false</code>)
@@ -61,6 +63,7 @@ public class FolderPreferences extends VersionedPrefs {
                         .add(NOTIFICATIONS_ENABLED)
                         .add(NOTIFICATION_RINGTONE)
                         .add(NOTIFICATION_VIBRATE)
+                        .add(NOTIFICATION_HEADS_UP)
                         .add(NOTIFICATION_NOTIFY_EVERY_MESSAGE)
                         .build();
     }
@@ -234,6 +237,15 @@ public class FolderPreferences extends VersionedPrefs {
 
     public void setNotificationVibrateEnabled(final boolean enabled) {
         getEditor().putBoolean(PreferenceKeys.NOTIFICATION_VIBRATE, enabled).apply();
+        notifyBackupPreferenceChanged();
+    }
+
+    public boolean isNotificationHeadsUpEnabled() {
+        return getSharedPreferences().getBoolean(PreferenceKeys.NOTIFICATION_HEADS_UP, true);
+    }
+
+    public void setNotificationHeadsUpEnabled(final boolean enabled) {
+        getEditor().putBoolean(PreferenceKeys.NOTIFICATION_HEADS_UP, enabled).apply();
         notifyBackupPreferenceChanged();
     }
 

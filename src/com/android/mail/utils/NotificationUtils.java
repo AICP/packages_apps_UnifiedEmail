@@ -28,10 +28,10 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.provider.ContactsContract.Contacts.Photo;
-import android.support.v4.app.NotificationCompat;
 import android.support.v4.text.BidiFormatter;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
@@ -80,6 +80,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class NotificationUtils {
     public static final String LOG_TAG = "NotifUtils";
+
+    // Heads up extra flags which are not accessable here.
+    // We use here same flags which are hidden in API19 base. See #android.app.Notification.
+    private static final String EXTRA_AS_HEADS_UP = "headsup";
+    private static final int HEADS_UP_ALLOWED = 1;
+    private static final String EXTRA_HEADS_UP_EXPANDED = "headsupExpanded";
+    private static final int HEADS_UP_EXPANDED = 0;
 
     /** Contains a list of <(account, label), unread conversations> */
     private static NotificationMap sActiveNotificationMap = null;
@@ -529,7 +536,7 @@ public class NotificationUtils {
             int iconResId = NotifyIconUtilities.findNotifyIconForAccountDomain(context,
                     R.xml.notify_icon_providers, account.getEmailAddress(),
                     R.drawable.stat_notify_email);
-            NotificationCompat.Builder notification = new NotificationCompat.Builder(context);
+            Notification.Builder notification = new Notification.Builder(context);
             notification.setSmallIcon(iconResId);
             notification.setTicker(account.name);
 
@@ -640,6 +647,18 @@ public class NotificationUtils {
                     LogUtils.sanitizeName(LOG_TAG, account.name),
                     Boolean.toString(folderPreferences.isNotificationVibrateEnabled()));
 
+            if (folderPreferences.isNotificationHeadsUpEnabled()) {
+                Bundle extras = new Bundle();
+                // Request a heads up notification if possible
+                // and show as expanded.
+                extras.putInt(EXTRA_AS_HEADS_UP, HEADS_UP_ALLOWED);
+                extras.putInt(EXTRA_HEADS_UP_EXPANDED, HEADS_UP_EXPANDED);
+                notification.setExtras(extras);
+                // Set the priority to high
+                // to force show heads up notification.
+                notification.setPriority(Notification.PRIORITY_HIGH);
+            }
+
             int defaults = 0;
 
             /*
@@ -745,7 +764,7 @@ public class NotificationUtils {
 
     private static void configureLatestEventInfoFromConversation(final Context context,
             final Account account, final FolderPreferences folderPreferences,
-            final NotificationCompat.Builder notification, final Cursor conversationCursor,
+            final Notification.Builder notification, final Cursor conversationCursor,
             final PendingIntent clickIntent, final Intent notificationIntent,
             final int unreadCount, final int unseenCount,
             final Folder folder, final long when) {
@@ -786,8 +805,8 @@ public class NotificationUtils {
                 // The body of the notification is the account name, or the label name.
                 notification.setSubText(isInbox ? notificationAccount : notificationLabelName);
 
-                final NotificationCompat.InboxStyle digest =
-                        new NotificationCompat.InboxStyle(notification);
+                final Notification.InboxStyle digest =
+                        new Notification.InboxStyle(notification);
 
                 int numDigestItems = 0;
                 do {
@@ -937,8 +956,8 @@ public class NotificationUtils {
                         notification.setLargeIcon(
                                 getDefaultNotificationIcon(context, folder, true));
                     }
-                    final NotificationCompat.BigTextStyle bigText =
-                            new NotificationCompat.BigTextStyle(notification);
+                    final Notification.BigTextStyle bigText =
+                            new Notification.BigTextStyle(notification);
 
                     // Seek the message cursor to the first unread message
                     final Message message;
@@ -1105,7 +1124,7 @@ public class NotificationUtils {
      * @param subject Subject of the new message that triggered the notification
      * @param snippet Snippet of the new message that triggered the notification
      * @return a {@link CharSequence} suitable for use in
-     *         {@link android.support.v4.app.NotificationCompat.BigTextStyle}
+     *         {@link android.app.Notification.BigTextStyle}
      */
     private static CharSequence getSingleMessageInboxLine(Context context,
             String senders, String subject, String snippet) {
@@ -1159,7 +1178,7 @@ public class NotificationUtils {
      * @param context
      * @param subject Subject of the new message that triggered the notification
      * @return a {@link CharSequence} suitable for use in
-     * {@link NotificationCompat.Builder#setContentText}
+     * {@link android.app.Notification.Builder#setContentText}
      */
     private static CharSequence getSingleMessageLittleText(Context context, String subject) {
         final TextAppearanceSpan notificationSubjectSpan = new TextAppearanceSpan(
@@ -1178,7 +1197,7 @@ public class NotificationUtils {
      * @param subject Subject of the new message that triggered the notification
      * @param message the {@link Message} to be displayed.
      * @return a {@link CharSequence} suitable for use in
-     *         {@link android.support.v4.app.NotificationCompat.BigTextStyle}
+     *         {@link android.app.Notification.BigTextStyle}
      */
     private static CharSequence getSingleMessageBigText(Context context, String subject,
             final Message message) {

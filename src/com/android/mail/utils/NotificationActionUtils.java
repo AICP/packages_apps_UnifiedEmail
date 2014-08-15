@@ -28,7 +28,6 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
-import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
 import android.widget.RemoteViews;
 
@@ -186,7 +185,7 @@ public class NotificationActionUtils {
 
     /**
      * Adds the appropriate notification actions to the specified
-     * {@link android.support.v4.app.NotificationCompat.Builder}
+     * {@link android.app.Notification.Builder}
      *
      * @param notificationIntent The {@link Intent} used when the notification is clicked
      * @param when The value passed into {@link android.app.Notification.Builder#setWhen(long)}.
@@ -194,7 +193,7 @@ public class NotificationActionUtils {
      * @param notificationActions A {@link Set} set of the actions to display
      */
     public static void addNotificationActions(final Context context,
-            final Intent notificationIntent, final NotificationCompat.Builder notification,
+            final Intent notificationIntent, final Notification.Builder notification,
             final Account account, final Conversation conversation, final Message message,
             final Folder folder, final int notificationId, final long when,
             final Set<String> notificationActions) {
@@ -522,7 +521,7 @@ public class NotificationActionUtils {
         LogUtils.i(LOG_TAG, "createUndoNotification for %s",
                 notificationAction.getNotificationActionType());
 
-        final NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+        final Notification.Builder builder = new Notification.Builder(context);
 
         int iconResId = NotifyIconUtilities.findNotifyIconForAccountDomain(context,
                 R.xml.notify_icon_providers, notificationAction.getAccount().getEmailAddress(),
