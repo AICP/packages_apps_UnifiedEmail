@@ -29,28 +29,28 @@
             android:title="@string/preference_removal_action_title"
             gm:entrySummaries="@array/prefSummaries_removal_action_summary" />
 
-    <CheckBoxPreference
+    <SwitchPreference
             android:defaultValue="true"
             android:key="conversation-list-swipe"
             android:persistent="true"
             android:summary="@string/preference_swipe_description"
             android:title="@string/preference_swipe_title_archive" />
 
-    <CheckBoxPreference
+    <SwitchPreference
             android:defaultValue="true"
             android:key="conversation-list-sender-image"
             android:persistent="true"
             android:summary="@string/preference_sender_image_description"
             android:title="@string/preference_sender_image_title" />
 
-    <CheckBoxPreference
+    <SwitchPreference
             android:defaultValue="@bool/prefDefault_actionStripActionReplyAll"
             android:key="default-reply-all"
             android:persistent="true"
             android:summary="@string/preferences_default_reply_all_summary"
             android:title="@string/preferences_default_reply_all_title" />
 
-    <CheckBoxPreference
+    <SwitchPreference
             android:defaultValue="true"
             android:key="conversation-overview-mode"
             android:persistent="true"
@@ -70,17 +70,17 @@
     <PreferenceCategory
             android:title="@string/preference_header_action_confirmations"
             android:key="removal-actions-group">
-        <CheckBoxPreference
+        <SwitchPreference
                 android:defaultValue="true"
                 android:key="confirm-delete"
                 android:persistent="true"
                 android:title="@string/preference_confirm_before_delete_title" />
-        <CheckBoxPreference
+        <SwitchPreference
                 android:defaultValue="true"
                 android:key="confirm-archive"
                 android:persistent="true"
                 android:title="@string/preference_confirm_before_archive_title" />
-        <CheckBoxPreference
+        <SwitchPreference
                 android:defaultValue="true"
                 android:key="confirm-send"
                 android:persistent="true"

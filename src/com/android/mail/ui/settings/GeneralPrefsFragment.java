@@ -23,10 +23,10 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.SwitchPreference;
 import android.provider.SearchRecentSuggestions;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -260,7 +260,7 @@ public class GeneralPrefsFragment extends MailPreferenceFragment
     }
 
     private void updateListSwipeTitle(final String removalAction) {
-        final CheckBoxPreference listSwipePreference = (CheckBoxPreference)
+        final SwitchPreference listSwipePreference = (SwitchPreference)
                 findPreference(MailPrefs.PreferenceKeys.CONVERSATION_LIST_SWIPE);
         listSwipePreference.setTitle(MailPrefs.RemovalActions.DELETE.equals(removalAction) ?
                 R.string.preference_swipe_title_delete : R.string.preference_swipe_title_archive);
