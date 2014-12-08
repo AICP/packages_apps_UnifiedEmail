@@ -190,10 +190,11 @@ public class SubjectAndFolderView extends TextView
         if (mBidiFormatter == null) {
             final ConversationViewAdapter adapter = mHeaderItem != null
                     ? mHeaderItem.getAdapter() : null;
-            if (adapter == null) {
-                mBidiFormatter = BidiFormatter.getInstance();
-            } else {
+            if (adapter != null) {
                 mBidiFormatter = adapter.getBidiFormatter();
+            }
+            if (adapter == null || mBidiFormatter == null) {
+                mBidiFormatter = BidiFormatter.getInstance();
             }
         }
         return mBidiFormatter;
