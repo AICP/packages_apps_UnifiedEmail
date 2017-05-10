@@ -88,7 +88,7 @@ public class ButteryProgressBar extends View {
         final TypedArray ta = c.obtainStyledAttributes(attrs, R.styleable.ButteryProgressBar);
         try {
             mBarColor = ta.getColor(R.styleable.ButteryProgressBar_barColor,
-                    c.getResources().getColor(android.R.color.holo_blue_light));
+                    c.getResources().getColor(R.color.buttery_progress_bar));
             mSolidBarHeight = ta.getDimensionPixelSize(
                     R.styleable.ButteryProgressBar_barHeight,
                     Math.round(DEFAULT_BAR_HEIGHT_DP * mDensity));

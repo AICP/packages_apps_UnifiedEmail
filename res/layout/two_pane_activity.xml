@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:foregroundGravity="fill_horizontal|top"
-            android:background="@android:color/white">
+            android:background="@color/two_pane_bg">
 
             <FrameLayout
                 android:id="@+id/drawer"

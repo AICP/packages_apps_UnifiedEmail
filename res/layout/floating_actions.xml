@@ -48,7 +48,7 @@
                 android:layout_weight="1"
                 android:paddingTop="@dimen/snack_bar_margin_vertical"
                 android:paddingBottom="@dimen/snack_bar_margin_vertical"
-                android:textColor="@android:color/white"
+                android:textColor="@color/floating_actions_description_text"
                 style="@style/SnackBarDescriptionTextStyle" />
 
             <TextView
@@ -76,7 +76,7 @@
                 android:layout_marginLeft="@dimen/snack_bar_margin_horizontal"
                 android:layout_marginRight="@dimen/snack_bar_margin_horizontal"
                 android:paddingTop="@dimen/snack_bar_margin_vertical"
-                android:textColor="@android:color/white" />
+                android:textColor="@color/floating_actions_description_text" />
 
             <TextView
                 android:id="@+id/multiline_action_text"

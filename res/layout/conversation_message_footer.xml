@@ -20,7 +20,7 @@
     android:id="@+id/attachments"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/white"
+    android:background="@color/conversation_message_footer_bg"
     android:orientation="vertical">
 
     <TextView

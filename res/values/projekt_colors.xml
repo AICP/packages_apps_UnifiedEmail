@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="drawer_icon_active">#ff000000</color>
+
+    <color name="wait_for_manual_sync_bg">@android:color/white</color>
+    <color name="wait_default_bg">@android:color/white</color>
+    <color name="mail_actionbar_searchview_bg">@android:color/white</color>
+    <color name="conversation_footer_bg">@android:color/white</color>
+    <color name="conversation_message_header_bg">@android:color/white</color>
+    <color name="conversation_message_footer_bg">@android:color/white</color>
+    <color name="conversation_view_header_bg">@android:color/white</color>
+    <color name="account_feedback_bg">@android:color/white</color>
+    <color name="search_suggestion_list_bg">@android:color/white</color>
+    <color name="search_suggestion_list_fade_bg">#33000000</color>
+    <color name="two_pane_bg">@android:color/white</color>
+
+    <color name="conversation_message_attachment_title">#333333</color>
+    <color name="conversation_message_attachment_subtitle">#aaaaaa</color>
+
+    <color name="swipe_leavebehind_body_text">@android:color/white</color>
+    <color name="floating_actions_description_text">@android:color/white</color>
+    <color name="conversation_topmost_overlay_items_description_text">@android:color/white</color>
+    <color name="conversation_message_attachment_title">@android:color/black</color>
+    <color name="compose_attachment_title">@android:color/white</color>
+    <color name="compose_attachment_subtitle">@android:color/white</color>
+
+    <color name="buttery_progress_bar">@android:color/holo_blue_light</color>
+    <color name="material_search_action_view_light_bg">@android:color/white</color>
+    <color name="material_search_action_view_dark_bg_text">@android:color/white</color>
+
+    <color name="widget_text_black">@android:color/black</color>
+    <color name="widget_loading_text">@android:color/black</color>
+    <color name="widget_tap_to_configure_folder_sync_bg">@android:color/darker_gray</color>
+
+</resources>
+
