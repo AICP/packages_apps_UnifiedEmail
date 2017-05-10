@@ -28,7 +28,7 @@
         android:ellipsize="end"
         android:singleLine="true"
         android:gravity="center_vertical"
-        android:textColor="@android:color/white"
+        android:textColor="@color/swipe_leavebehind_body_text"
         android:textSize="16sp"
         style="@style/UndoDescriptionStyle" />
 

@@ -50,7 +50,7 @@
                 android:layout_weight="1"
                 android:paddingTop="@dimen/snack_bar_margin_vertical"
                 android:paddingBottom="@dimen/snack_bar_margin_vertical"
-                android:textColor="@android:color/white"
+                android:textColor="@color/conversation_topmost_overlay_items_description_text"
                 style="@style/SnackBarDescriptionTextStyle" />
 
             <TextView

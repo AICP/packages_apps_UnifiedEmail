@@ -29,7 +29,7 @@
         android:id="@+id/search_overlay_suggestion_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
+        android:background="@color/search_suggestion_list_bg"
         android:divider="@null"
         android:nextFocusUp="@+id/search_actionbar_query_text" />
 
@@ -39,6 +39,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#33000000" />
+        android:background="@color/search_suggestion_list_fade_bg" />
 
 </com.android.mail.ui.MaterialSearchSuggestionsList>

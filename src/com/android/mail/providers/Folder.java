@@ -670,7 +670,8 @@ public class Folder implements Parcelable, Comparable<Folder> {
 
                     final Drawable activatedIconDrawable =
                             iconView.getResources().getDrawable(icon);
-                    activatedIconDrawable.mutate().setColorFilter(0xff000000,
+                    activatedIconDrawable.mutate().setColorFilter(
+                            iconView.getResources().getColor(R.color.drawer_icon_active),
                             PorterDuff.Mode.MULTIPLY);
 
                     listDrawable.addState(ACTIVATED_STATE_LIST, activatedIconDrawable);
