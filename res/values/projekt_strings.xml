@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="webview_css" translatable="false"><![CDATA[
+        <style media=\"screen\" type=\"text/css\">
+            body {
+                color: ?resources/body ;
+            }
+            a:link {
+                color: ?resources/a_link ;
+            }
+            a:active {
+                color: ?resources/a_active ;
+            }
+            a:visited {
+                color: ?resources/a_visited ;
+            }
+        </style>
+        ]]></string>
+</resources>
+

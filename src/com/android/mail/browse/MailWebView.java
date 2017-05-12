@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.webkit.WebView;
 
-public class MailWebView extends WebView {
+public class MailWebView extends ThemableWebView {
 
     // NARROW_COLUMNS reflow can trigger the document to change size, so notify interested parties.
     // This is also a good trigger to know when to alter scroll position.

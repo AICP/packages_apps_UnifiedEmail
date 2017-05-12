@@ -33,5 +33,12 @@
     <color name="widget_loading_text">@android:color/black</color>
     <color name="widget_tap_to_configure_folder_sync_bg">@android:color/darker_gray</color>
 
+    <!-- When enabled, a css will get added to emails, allowing to theme the colors below -->
+    <bool name="theme_webview">false</bool>
+    <color name="webview_bg">@android:color/white</color>
+    <color name="webview_body">#000000</color>
+    <color name="webview_a_link">#0000EE</color>
+    <color name="webview_a_active">#EE0000</color>
+    <color name="webview_a_visited">#551A8B</color>
 </resources>
 
