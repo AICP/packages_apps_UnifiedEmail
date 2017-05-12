@@ -32,7 +32,7 @@ import com.android.mail.utils.Throttle;
 /**
  * A WebView designed to live within a {@link MessageScrollView}.
  */
-public class MessageWebView extends WebView implements MessageScrollView.Touchable {
+public class MessageWebView extends ThemableWebView implements MessageScrollView.Touchable {
 
     private static final String LOG_TAG = LogTag.getLogTag();
 
